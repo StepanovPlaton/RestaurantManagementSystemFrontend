@@ -3,7 +3,8 @@
 FROM node:22-alpine AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci
+# Lockfile from Windows may omit Linux-only optional wasm deps; npm install resolves them in Alpine.
+RUN npm install
 
 FROM node:22-alpine AS build
 WORKDIR /app
