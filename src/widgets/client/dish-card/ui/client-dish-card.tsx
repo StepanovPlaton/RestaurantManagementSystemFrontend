@@ -9,6 +9,7 @@ import { parsePrice } from "@/shared/lib/parse-price";
 import { toMediaUrl } from "@/shared/lib/media-url";
 import { Button } from "@/shared/ui/button";
 import { Card, CardContent } from "@/shared/ui/card";
+import { DishImagePlaceholder } from "@/shared/ui/dish-image-placeholder";
 
 type ClientDishCardProps = {
   dish: {
@@ -49,9 +50,7 @@ export function ClientDishCard({ dish, photoPath }: ClientDishCardProps) {
               className="absolute inset-0 size-full object-cover"
             />
           ) : (
-            <div className="text-muted-foreground flex h-full items-center justify-center text-xs">
-              Нет фото
-            </div>
+            <DishImagePlaceholder className="absolute inset-0" />
           )}
         </div>
       </Link>

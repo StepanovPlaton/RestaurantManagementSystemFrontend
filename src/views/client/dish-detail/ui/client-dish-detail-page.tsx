@@ -11,6 +11,7 @@ import { formatPrice } from "@/shared/lib/format-price";
 import { toMediaUrl } from "@/shared/lib/media-url";
 import { AsyncState } from "@/shared/ui/async-state";
 import { Button } from "@/shared/ui/button";
+import { DishImagePlaceholder } from "@/shared/ui/dish-image-placeholder";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card";
 import { Separator } from "@/shared/ui/separator";
 
@@ -79,9 +80,7 @@ export function ClientDishDetailPage() {
                   className="size-full object-cover"
                 />
               ) : (
-                <div className="text-muted-foreground flex size-full items-center justify-center text-sm">
-                  Нет фото
-                </div>
+                <DishImagePlaceholder />
               )}
             </div>
 
